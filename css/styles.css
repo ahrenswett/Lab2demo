@@ -1,0 +1,13 @@
+*{background-color: crimson;}
+
+section article ul li{ 
+    background-color: black;
+}
+
+section article ol li{
+    background-color: white;
+}
+
+.orange{
+    background-color: orange;
+}
