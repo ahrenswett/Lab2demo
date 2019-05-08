@@ -4,6 +4,9 @@
 var right = 0;
 var wrong = 0;
 var heldAnswer;
+//not used yet but works as counter
+var loopCount = 0 ;
+
 
 // converts answer to lowercase and truncates to single letter answer
 function shrink(answer){
@@ -17,12 +20,14 @@ function shrink(answer){
   else{
     heldAnswer = '';
   }
+  loopCount ++;
+  console.log(loopCount + ' Loops');
 }
 
 
 //******KIDS********
 // Asks User if they think I have Kids then logs the answer in console
-var haveKids = prompt('do you think I have kids?');
+var haveKids = prompt('Do you think I have kids?');
 console.log('the user guessed ' + haveKids + ' kids.' );
 
 // Uses shrink function to convert answer to lowercase and truncates to single letter answer
@@ -31,13 +36,12 @@ shrink(haveKids);
 //increments a counter if the answer is right or wrong
 if (heldAnswer === 'y'){
   right++;
+  alert('Do you know them?');
 }
 else{
   wrong++;
+  alert('Are you sure about that answer?');
 }
-alert('Are you sure about that answer?')
-
-
 
 
 
@@ -53,13 +57,12 @@ shrink(iceClimb);
 //increments a counter if the answer is right or wrong
 if (heldAnswer === 'y'){
   right ++;
+  alert('Do you want to come with me?');
 }
 else{
   wrong ++;
+  alert('Would you bet your life on it?');
 }
-alert('Would you bet your life on it?')
-
-
 
 
 
@@ -75,13 +78,13 @@ shrink(vespa);
 //increments a counter if the answer is right or wrong
 if (heldAnswer === 'n'){
   right ++;
+  alert('Correct I ride motorscycles but mine is broken :(');
+
 }
 else{
   wrong ++;
+  alert('put put put nope WRONG!');
 }
-alert('I hope your sure about that');
-
-
 
 
 
@@ -96,14 +99,12 @@ shrink(cityFrom);
 //increments a counter if the answer is right or wrong
 if (heldAnswer === 'y'){
   right ++;
+  alert('Are you from there too?');
 }
 else{
   wrong ++;
+  alert('Wrong-o!');
 }
-alert('Are you from there? How do you know if im from there or not?');
-
-
-
 
 
 
@@ -118,11 +119,13 @@ shrink(anotherLang);
 //increments a counter if the answer is right or wrong
 if (heldAnswer === 'n'){
   right ++;
+  alert('Right!I speak some Korean but not fluently, so the answer is no');
 }
 else{
   wrong ++;
+  alert('Sorry buddy, I know a little Korean but not enough to count!')
 }
-alert('Hope your right!!!');
+
 
 console.log('Got ' + right + ' answers right');
 console.log('Got ' + wrong + ' answers wrong');
