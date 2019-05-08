@@ -14,6 +14,9 @@ function shrink(answer){
   else if(answer === 'no'){
     heldAnswer = 'n';
   }
+  else{
+    heldAnswer = '';
+  }
 }
 
 
