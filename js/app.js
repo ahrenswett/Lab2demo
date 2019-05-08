@@ -7,11 +7,11 @@ var heldAnswer;
 
 // converts answer to lowercase and truncates to single letter answer
 function shrink(answer){
-  answer.toLocaleLowerCase();
-  if (answer === 'yes'){
+  answer=answer.toLowerCase();
+  if (answer === 'yes' || answer === 'y'){
     heldAnswer = 'y';
   }
-  else if(answer === 'no'){
+  else if(answer === 'no'|| answer === 'n'){
     heldAnswer = 'n';
   }
   else{
@@ -126,3 +126,4 @@ alert('Hope your right!!!');
 
 console.log('Got ' + right + ' answers right');
 console.log('Got ' + wrong + ' answers wrong');
+
