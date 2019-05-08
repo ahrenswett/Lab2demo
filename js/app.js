@@ -4,7 +4,7 @@
 var right = 0;
 var wrong = 0;
 var heldAnswer;
-//not used yet but works as counter
+//not used other tan to track how many times function is called yet but works as counter
 var loopCount = 0 ;
 
 
@@ -37,11 +37,23 @@ shrink(haveKids);
 if (heldAnswer === 'y'){
   right++;
   alert('Do you know them?');
+  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br>You answered ' + haveKids + ' I have kids.<br>That is correct! I have 3!';
 }
+
 else{
   wrong++;
+  if(heldAnswer === ''){
+    haveKids= ' no answer ';
+  }
+
   alert('Are you sure about that answer?');
+  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br>You answered ' + haveKids + ' I have kids.<br>That is wrong! I have 3!';
+  // resets held answer to empty string
+  heldAnswer = '';
 }
+
+
+
 
 
 
@@ -58,10 +70,17 @@ shrink(iceClimb);
 if (heldAnswer === 'y'){
   right ++;
   alert('Do you want to come with me?');
+  document.getElementById('question2').innerHTML= 'Question 2: Do you think that I like ice climbing? You answered ' + iceClimb + ' <br>That is correct! Its Magical, So whats not to like!!';
 }
 else{
   wrong ++;
+  if(heldAnswer === ''){
+    iceClimb = ' no answer ';
+  }
+
+
   alert('Would you bet your life on it?');
+  document.getElementById('question2').innerHTML = 'Question 2: Do you think that I like ice climbing?<br>You answered ' + iceClimb + ' <br>That is Wrong! Its Magical, So whats not to like!!';
 }
 
 
@@ -79,11 +98,15 @@ shrink(vespa);
 if (heldAnswer === 'n'){
   right ++;
   alert('Correct I ride motorscycles but mine is broken :(');
-
+  document.getElementById("question3").innerHTML='<br>You answered ' + + ' <br>That is correct! ';
 }
 else{
   wrong ++;
+  if(heldAnswer === ''){
+    vespa = ' no answer ';
+  }
   alert('put put put nope WRONG!');
+  document.getElementById("question3").innerHTML='<br>You answered ' + + ' <br>That is Wrong!  ';
 }
 
 
@@ -99,11 +122,13 @@ shrink(cityFrom);
 //increments a counter if the answer is right or wrong
 if (heldAnswer === 'y'){
   right ++;
-  alert('Are you from there too?');
+  alert('Are you from there too?')
+  document.getElementById("question2").innerHTML='<br>You answered ' + + ' <br>That is correct! ';
 }
 else{
   wrong ++;
   alert('Wrong-o!');
+  document.getElementById("question2").innerHTML='<br>You answered ' + + ' <br>That is Wrong!  ';
 }
 
 
