@@ -1,37 +1,20 @@
-/*
-
-var gender = prompt('Are you male or Female?');
-
-gender = gender.toLowerCase();
-
-if(gender === 'male'){
-    alert('Awesome Guys Rock!');
-}
-
-else if(gender === 'female'){
-    alert('Sweet girls kick ass!');
-}
-
-else{
-    alert('Its ok im not sure of my gender either');
-}
-
-*/
+'use strict';
 
 // counts right and wrong answers
 var right = 0;
 var wrong = 0;
+var heldAnswer;
 
 // converts answer to lowercase and truncates to single letter answer
 function shrink(answer){
-    answer.toLocaleLowerCase()
-    if (answer === yes){
-        answer = y;
-    }
-    else if(answer === no){
-        answer = n;
-    }; 
-
+  answer.toLocaleLowerCase();
+  if (answer === 'yes'){
+    heldAnswer = 'y';
+  }
+  else if(answer === 'no'){
+    heldAnswer = 'n';
+  }
+}
 
 
 
@@ -43,11 +26,11 @@ console.log('the user guessed ' + haveKids + ' kids.' );
 shrink(haveKids);
 
 //increments a counter if the answer is right or wrong
-if (haveKids === 'y'){
-  right ++;
+if (heldAnswer === 'y'){
+  right++;
 }
 else{
-  wrong ++;
+  wrong++;
 }
 
 
@@ -60,13 +43,14 @@ console.log('the user guessed ' + iceClimb + 'ice climbing.' );
 
 shrink(iceClimb);
 
-if (iceClimb === 'y'){
-    right ++;
-  }
-  else{
-    wrong ++;
-  }
+//increments a counter if the answer is right or wrong
+if (heldAnswer === 'y'){
+  right ++;
+}
+else{
+  wrong ++;
+}
 
 // Asks User if they think I ride a vespa then logs the answer in console
-var vespa = prompt('Do you think I ride a vespa?');
-console.log('the user thinks ' + vespa + ' vespa rider')
+// var vespa = prompt('Do you think I ride a vespa?');
+// console.log('the user thinks ' + vespa + ' vespa rider')
