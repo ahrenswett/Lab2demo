@@ -89,7 +89,7 @@ else{
 
 
 //******CITY FROM******
-// Asks User if they think I ride a vespa then logs the answer in console
+// Asks User if they think im from Boulder then logs the answer in console
 var cityFrom = prompt('Do you think Im from Boulder,Co?');
 console.log('the user thinks ' + cityFrom + ' from Boulder,Co?');
 
@@ -109,8 +109,8 @@ else{
 
 
 //******anotherLang******
-// Asks User if they think I ride a vespa then logs the answer in console
-var anotherLang = prompt('Do you think Im speak another language?');
+// Asks User if they think I i speak another language then logs the answer in console
+var anotherLang = prompt('Do you think I speak another language?');
 console.log('the user thinks ' + anotherLang + ' another language');
 
 // Uses shrink function to convert answer to lowercase and truncates to single letter answer

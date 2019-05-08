@@ -43,6 +43,36 @@ header h2{
     background-color: rgba(196, 201, 201, 0.438);
 }
 
+#question1{
+    position: relative;
+    top: 25%;
+    text-align: center;
+}
+
+
+#question2{
+    position: relative;
+    top: 30%;
+    text-align: center;
+}
+
+#question3{
+    position: relative;
+    top: 35%;
+    text-align: center;
+}
+
+#question4{
+    position: relative;
+    top: 40%;
+    text-align: center;
+}
+#question5{
+    position: relative;
+    top: 45%;
+    text-align: center;
+}
+
 footer{
   position: fixed;
   height: 18%;
