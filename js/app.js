@@ -37,7 +37,7 @@ shrink(haveKids);
 if (heldAnswer === 'y'){
   right++;
   alert('Do you know them?');
-  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br>You answered ' + haveKids + '.<br>That is correct! I have 3!';
+  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong>You answered ' + haveKids + '.<br></strong>That is correct! I have 3!';
 }
 
 else{
@@ -47,7 +47,7 @@ else{
   }
 
   alert('Are you sure about that answer?');
-  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br>You answered ' + haveKids + '.<br>That is wrong! I have 3!';
+  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong><You answered ' + haveKids + '.<br></strong>That is wrong! I have 3!';
 }
 
 
@@ -68,7 +68,7 @@ shrink(iceClimb);
 if (heldAnswer === 'y'){
   right ++;
   alert('Do you want to come with me?');
-  document.getElementById('question2').innerHTML= 'Question 2: Do you think that I like ice climbing? You answered ' + iceClimb + ' .<br>That is correct! Its Magical, So whats not to like!!';
+  document.getElementById('question2').innerHTML= 'Question 2: Do you think that I like ice climbing?<br><strong>You answered ' + iceClimb + ' .<br></strong>That is correct! Its Magical, So whats not to like!!';
 }
 else{
   wrong ++;
@@ -78,7 +78,7 @@ else{
 
 
   alert('Would you bet your life on it?');
-  document.getElementById('question2').innerHTML = 'Question 2: Do you think that I like ice climbing?<br>You answered ' + iceClimb + ' .<br>That is Wrong! Its Magical, So whats not to like!!';
+  document.getElementById('question2').innerHTML = 'Question 2: Do you think that I like ice climbing?<br><strong>You answered ' + iceClimb + ' .<br></strong>That is Wrong! Its Magical, So whats not to like!!';
 }
 
 
@@ -96,7 +96,7 @@ shrink(vespa);
 if (heldAnswer === 'n'){
   right ++;
   alert('Correct I ride motorscycles but mine is broken :(');
-  document.getElementById('question3').innerHTML='Question 3: Do you think I ride a vespa?<br>You answered ' + vespa + ' <br>That is correct! I have a broken CB750 Cafe Racer.';
+  document.getElementById('question3').innerHTML='Question 3: Do you think I ride a vespa?<br><strong>You answered ' + vespa + ' <br></strong>That is correct! I have a broken CB750 Cafe Racer.';
 }
 else{
   wrong ++;
@@ -104,7 +104,7 @@ else{
     vespa = ' no answer ';
   }
   alert('put put put nope WRONG!');
-  document.getElementById('question3').innerHTML='Question 3: Do you think I ride a vespa?<br>You answered ' + vespa + ' <br>That is Wrong!  I have a broken CB750 Cafe Racer.';
+  document.getElementById('question3').innerHTML='Question 3: Do you think I ride a vespa?<br><strong>You answered ' + vespa + ' <br></strong>That is Wrong!  I have a broken CB750 Cafe Racer.';
 }
 
 
@@ -121,7 +121,7 @@ shrink(cityFrom);
 if (heldAnswer === 'y'){
   right ++;
   alert('Are you from there too?');
-  document.getElementById('question4').innerHTML='Question 4: Do you think Im from Boulder,Co?<br>You answered ' + cityFrom + ' <br>That is correct! ';
+  document.getElementById('question4').innerHTML='Question 4: Do you think Im from Boulder,Co?<br><strong>You answered ' + cityFrom + ' <br></strong>That is correct! ';
 }
 
 else{
@@ -131,7 +131,7 @@ else{
   }
   alert('Wrong-o!');
 
-  document.getElementById('question4').innerHTML='Question 4: Do you think Im from Boulder,Co?<br>You answered ' + cityFrom + ' <br>That is Wrong!  ';
+  document.getElementById('question4').innerHTML='Question 4: Do you think Im from Boulder,Co?<br><strong>You answered ' + cityFrom + ' <br></strong>That is Wrong!  ';
 }
 
 
@@ -148,7 +148,7 @@ shrink(anotherLang);
 if (heldAnswer === 'n'){
   right ++;
   alert('Right!I speak some Korean but not fluently, so the answer is no');
-  document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br>You answered ' + anotherLang + ' <br>That is correct! I only speak a little Korean. Not enough to count.';
+  document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br><strong>You answered ' + anotherLang + ' <br></strong>That is correct! I only speak a little Korean. Not enough to count.';
 }
 else{
   wrong ++;
@@ -156,7 +156,7 @@ else{
     anotherLang = ' no answer ';
   }
   alert('Sorry buddy, I know a little Korean but not enough to count!');
-  document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br>You answered ' + anotherLang + ' <br>That is wrong! I only speak a little Korean. Not enough to count.';
+  document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br><strong>You answered ' + anotherLang + ' <br></strong>That is wrong! I only speak a little Korean. Not enough to count.';
 
 }
 
