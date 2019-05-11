@@ -167,30 +167,37 @@ alert(userName +', you got ' + right + ' right! :) and ' + wrong + ' wrong. :(')
 
 
 // *********************************** Number Guessing Game *********************************//
-
-var numberGuessed = prompt( 'Im thinking of a number between 1 and 50. What do you think it is?');
-var min = 1;
-var max = 50;
-var random = Math.floor(Math.random() * (+max - +min)) + +min;
 var guessedRight = false;
 
-for(var i = 1; i<5; i++){
-  if(i === 4 && numberGuessed !== random){
-    alert('Im sorry you did not guess right :( The number was ' + random + ' :)');
+function numberGuessGame()
+{
+  var numberGuessed = prompt( 'Im thinking of a number between 1 and 50. What do you think it is?');
+  var min = 1;
+  var max = 50;
+  var random = Math.floor(Math.random() * (+max - +min)) + +min;
+  
+  
+  for(var i = 1; i<5; i++){
+    if(i === 4 && numberGuessed !== random){
+      alert('Im sorry you did not guess right :( The number was ' + random + ' :)');
+    }
+    else if(numberGuessed === random){
+      alert('Thats Right!!! The number was ' + random + ' :)');
+  
+      guessedRight = true;
+      break;
+    }
+    else if(numberGuessed < random){
+      numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to Low. You have ' + (4 - i) + ' tries left');
+    }
+    else if(numberGuessed > random){
+      numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to high. You have ' + (4 - i) + ' tries left');
+    }
+    console.log(i);
   }
-  else if(numberGuessed === random){
-    alert('Thats Right!!! The number was ' + random + ' :)');
-    guessedRight = true;
-    break;
-  }
-  else if(numberGuessed < random){
-    numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to Low. You have ' + (4 - i) + ' tries left');
-  }
-  else if(numberGuessed > random){
-    numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to high. You have ' + (4 - i) + ' tries left');
-  }
-  console.log(i);
 }
+
+numberGuessGame();
 
 
 
