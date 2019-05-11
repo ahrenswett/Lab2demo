@@ -165,20 +165,23 @@ console.log('Got ' + wrong + ' answers wrong');
 alert(userName +', you got ' + right + ' right! :) and ' + wrong + ' wrong. :(');
 
 
+
+// *********************************** Number Guessing Game *********************************//
+
 var numberGuessed = prompt( 'Im thinking of a number between 1 and 50. What do you think it is?');
 
 for(var i = 1; i<5; i++){
-  if(i === 4 && numberGuessed !== 37){
+  if(i === 4 && numberGuessed !== '37'){
     alert('Im sorry you did not guess right :( the number was 37, my age :)');
   }
-  else if(numberGuessed === 37){
+  else if(numberGuessed === '37'){
     alert('Thats Right!!! And thats how young I am!');
     break;
   }
-  else if(numberGuessed < 37){
+  else if(numberGuessed < '37'){
     numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to Low. You have ' + (4 - i) + ' tries left');
   }
-  else if(numberGuessed > 37){
+  else if(numberGuessed > '37'){
     numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to high. You have ' + (4 - i) + ' tries left');
   }
   console.log(i);
