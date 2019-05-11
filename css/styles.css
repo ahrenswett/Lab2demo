@@ -1,11 +1,17 @@
-main{
+
+
+.mainHead{
     z-index: 1;
-    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    background-color: rgb(80, 80, 80);
-} 
-
-
+    padding: 2%;
+    text-align: left;
+    color: black;
+    background-color: gray;
+    margin-top: 0px;
+}
 
 header h1{
     font-size:3em;
@@ -16,61 +22,94 @@ header h1{
 
 
 header h2{
-    margin-top: -19px;
+    font: size 2em;
+    margin-top: -15px;
     padding-left: 85px;
+    font-family: fantasy;
 }
 
+/* will hold information on social media buttons */
+header sMedia{
 
+}
 
-.mainHead{
-    position: fixed;
-    top: 0px;
-    left: 0px;
+main{
+    height: 100vh;
     width: 100%;
-    padding: 5%;
-    text-align: center;
-    color: black;
-    background-color: gray;
-    margin-top: 0px;
+    background-color: rgb(80, 80, 80);
+} 
+
+
+#left{
+    display: inline-block;
+    height: 100vh;
+    width: 30%;
+    background-color: rgba(196, 201, 201, 0.438);
+    text-align: left;
+    line-height: 18pt;
 }
 
-#vertical{
-    z-index: 2;
+
+#vertical {
+    z-index: 0;
     width: 30%;
     height: 100vh;
-    position: fixed;
-    left: 35%;
-    background-color: rgba(196, 201, 201, 0.438);
+    display: inline-block;
+    left: 40%;
+    background-color: rgba(196, 201, 201, 0.568);
 }
 
 #question1{
     position: relative;
-    top: 25%;
-    text-align: center;
+    top: 15%;
+    text-align: left;
+    line-height: 18pt;
 }
 
 
 #question2{
     position: relative;
-    top: 30%;
-    text-align: center;
+    top: 18%;
+    text-align: left;
+    line-height: 18pt;
 }
 
 #question3{
     position: relative;
-    top: 35%;
-    text-align: center;
+    top: 21%;
+    text-align: left;
+    line-height: 18pt;
 }
 
 #question4{
     position: relative;
-    top: 40%;
-    text-align: center;
+    top: 24%;
+    text-align: left;
+    line-height: 18pt;
 }
 #question5{
     position: relative;
-    top: 45%;
-    text-align: center;
+    top: 27%;
+    text-align: left;
+    line-height: 18pt;
+}
+
+#right {
+    left: 75%;
+    position: absolute;
+    display: inline-block;
+    height: 100vh;
+    width: 30%;
+    background-color: rgba(196, 201, 201, 0.438);
+    text-align: left;
+    
+}
+#right h1{
+text-align: center;
+font-family: fantasy;
+font-size: 2.5em;
+top: 25%;
+line-height: 18pt;
 }
 
 footer{
@@ -82,3 +121,4 @@ footer{
   background-color: grey;  
   text-align: center;
 }
+

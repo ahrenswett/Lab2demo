@@ -24,6 +24,9 @@ function shrink(answer){
   console.log(loopCount + ' Loops');
 }
 
+//welcomes the user to the page, gets their name and returns it in the console.
+var userName = prompt('Hi, welcome to my page what is your name?');
+console.log('the users name is ' + userName);
 
 //******KIDS********
 // Asks User if they think I have Kids then logs the answer in console
@@ -39,7 +42,6 @@ if (heldAnswer === 'y'){
   alert('Do you know them?');
   document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong>You answered ' + haveKids + '.<br></strong>That is correct! I have 3!';
 }
-
 else{
   wrong++;
   if(heldAnswer === ''){
@@ -47,11 +49,8 @@ else{
   }
 
   alert('Are you sure about that answer?');
-  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong><You answered ' + haveKids + '.<br></strong>That is wrong! I have 3!';
+  document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong>You answered ' + haveKids + '.</strong><br>That is wrong! I have 3!';
 }
-
-
-
 
 
 
@@ -159,8 +158,103 @@ else{
   document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br><strong>You answered ' + anotherLang + ' <br></strong>That is wrong! I only speak a little Korean. Not enough to count.';
 
 }
-
-
 console.log('Got ' + right + ' answers right');
 console.log('Got ' + wrong + ' answers wrong');
+
+alert(userName +', you got ' + right + ' right! :) and ' + wrong + ' wrong. :(');
+
+
+
+// ********Question 6 Number game *********** //
+
+var numberGuessed = prompt( 'Im thinking of a number between 1 and 50. What do you think it is?');
+var guessedRight = false;
+
+
+for(var i = 1; i<5; i++)
+{
+  console.log('iteration='+i+'---number guessed='+numberGuessed);
+
+// this was wierd casting issue
+  if(i === 4 && numberGuessed !== '37')
+  {
+    alert('Im sorry you did not guess right :( the number was 37, my age :)');
+  }
+  else if(numberGuessed === '37')
+  {
+    alert('Thats Right!!! And thats how young I am!');
+    guessedRight = true;
+    break;
+  }
+  else if(numberGuessed < '37')
+  {
+    numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to Low. You have ' + (4 - i) + ' tries left');
+  }
+  else if(numberGuessed > '37')
+  {
+    numberGuessed = prompt('Sorry ' + userName + ', that is not the number. Your guess is to high. You have ' + (4 - i) + ' tries left');
+  }
+  
+}
+
+
+// ************************    Array Game Question 7    **********************************//
+
+var answersArray = ['colorado', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
+var rightAnswerArray =[];
+
+var userAnswer= prompt(userName + ', what states do you think I have lived in?');
+userAnswer = userAnswer.toLowerCase();
+
+for (var i = 6; i > 0; i--)
+{
+  console.log('i now = ' +i);
+  if( answersArray.includes(userAnswer) === true && i >1 )
+  {
+    // transforms the users input to lowercase then logs whether or not the array contains their input in boolean
+    userAnswer = userAnswer.toLowerCase();
+    console.log('in the if');
+
+    // Pushes users answer to rightAnswerArray than logs their answer and the contents of rightAnswerArray
+    rightAnswerArray.push(userAnswer);
+    console.log(userAnswer);
+    console.log(rightAnswerArray);
+
+    userAnswer = prompt ('Thats right, I have lived in ' + userAnswer + '! Where else have i lived?');
+  }
+  else if( answersArray.includes(userAnswer) === true)
+  {
+    console.log('in the else if');
+
+    // Pushes users answer to rightAnswerArray than logs their answer and the contents of rightAnswerArray
+    rightAnswerArray.push(userAnswer);
+    console.log(userAnswer);
+    console.log(rightAnswerArray);
+
+    alert('Thats right, I have lived in ' + userAnswer + '! thats was your last guess. Lets see how you did!');
+  }
+  else if(i >1)
+  {
+    userAnswer = prompt('Nope try again you have ' + (i-1) +' tries left.');
+    console.log('in the else');
+  }
+  else
+  {
+    alert('Nope, and thats was your last guess. Lets see how you did!');
+  }
+}
+
+alert('Thanks for taking time to play my game! \n In the initial 5 questions about me you got '+ right +' right and '+ wrong + ' wrong.');
+
+//Sets a conditional responsed based on a boolean set by the number guessing game
+if(guessedRight === true)
+{
+  alert('In the number guessing game you guessed the number!\n It was 37, the same as my age.\nGood Job!');
+}
+else
+{
+  alert('In the number guessing game you did not guess right :( thats ok 4/50 are rough odds!\n the number was 37, the same as my age.');
+}
+
+alert('In the the places I have lived you guessed ' + rightAnswerArray.length + ' places right.\n' + rightAnswerArray + '.\n' + 'The places besides Washington are '+ answersArray );
 
