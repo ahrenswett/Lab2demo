@@ -5,3 +5,8 @@ JS now has a prompt based game that asks you to guess a number bettween 1 and 50
 JS also now has an game based on checking user answers of places the user thinks I lived against an array.
 JS now gives summary alerts at the end of all games to recap results.
 
+Author : PT and Ahren Swett
+11MAy19:
+Pairprogramming navigator by Ahren 
+written by PT
+added a random generator and enclosed entire gussing game in a function
