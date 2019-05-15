@@ -1,0 +1,25 @@
+'use strict';
+
+// counts right and wrong answers
+var right = 0;
+var wrong = 0;
+var heldAnswer;
+//not used other than to track how many times function is called yet, but works as counter
+var loopCount = 0 ;
+
+
+// converts answer to lowercase and truncates to single letter answer
+function shrink(answer){
+  answer=answer.toLowerCase();
+  if (answer === 'yes' || answer === 'y'){
+    heldAnswer = 'y';
+  }
+  else if(answer === 'no'|| answer === 'n'){
+    heldAnswer = 'n';
+  }
+  else{
+    heldAnswer = '';
+  }
+  loopCount ++;
+  console.log(loopCount + ' Loops');
+}
