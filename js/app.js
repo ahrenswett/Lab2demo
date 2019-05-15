@@ -9,6 +9,7 @@ var loopCount = 0 ;
 
 
 // converts answer to lowercase and truncates to single letter answer
+//requires a globaly declared variable "heldAnswer"
 function shrink(answer){
   answer=answer.toLowerCase();
   if (answer === 'yes' || answer === 'y'){
