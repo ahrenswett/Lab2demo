@@ -24,10 +24,7 @@ function shrink(answer){
   console.log(loopCount + ' Loops');
 }
 
-//welcomes the user to the page, gets their name and returns it in the console.
-var userName = prompt('Hi, welcome to my page what is your name?');
-console.log('the users name is ' + userName);
-
+//Lines 27 - 179 store functions that when called ask a question about me. None of them have perameters.
 function haveKidsQuestion()
 {
   //******KIDS********
@@ -151,6 +148,7 @@ function cityFromQuestion()
   }
 }
 
+
 function anotherLanguage()
 {
   //******anotherLang******
@@ -181,22 +179,15 @@ function anotherLanguage()
   }
 }
 
-console.log('Got ' + right + ' answers right');
-console.log('Got ' + wrong + ' answers wrong');
-
-
-alert(userName +', you got ' + right + ' right! :) and ' + wrong + ' wrong. :(');
-
 
 // *********************************** Number Guessing Game *********************************//
-var guessedRight = false;
-
 function numberGuessGame()
 {
-  var numberGuessed = prompt( 'Im thinking of a number between 1 and 50. What do you think it is?');
+  var numberGuessed = Number(prompt( 'Im thinking of a number between 1 and 50. What do you think it is?'));
   var min = 1;
   var max = 50;
   var random = Math.floor(Math.random() * (+max - +min)) + +min;
+  randomNumber = random;
   
   
   for(var i = 1; i<5; i++)
@@ -225,25 +216,16 @@ function numberGuessGame()
 }
 
 
-
-
-
-
-
-function arrayGame()
+// ************************    Array Game Question 7    **********************************//
+function arrayGame(answerKeyArray)
 {
-  // ************************    Array Game Question 7    **********************************//
-
-  var answersArray = ['colorado', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
-  var rightAnswerArray =[];
-
   var userAnswer= prompt(userName + ', what states do you think I have lived in?');
   userAnswer = userAnswer.toLowerCase();
 
   for (var i = 6; i > 0; i--)
   {
     console.log('i now = ' +i);
-    if( answersArray.includes(userAnswer) === true && i >1 )
+    if( answerKeyArray.includes(userAnswer) === true && i >1 )
     {
       // transforms the users input to lowercase then logs whether or not the array contains their input in boolean
       userAnswer = userAnswer.toLowerCase();
@@ -280,17 +262,47 @@ function arrayGame()
 }
 
 
+//welcomes the user to the page, gets their name and returns it in the console.
+var userName = prompt('Hi, welcome to my page what is your name?');
+console.log('the users name is ' + userName);
 
+//Calls Each of the 5 question functions
+haveKidsQuestion();
+iceClimbing();
+vespaQuestion();
+cityFromQuestion();
+anotherLanguage();
+
+
+//Sends right wrong answer count to console then alerts the user their scores
+console.log('Got ' + right + ' answers right');
+console.log('Got ' + wrong + ' answers wrong');
+alert(userName +', you got ' + right + ' right! :) and ' + wrong + ' wrong. :(');
+
+
+//Calls the numberGuessGame sets a variable to hold the random # globaly.
+var randomNumber = 0;
+numberGuessGame();
+
+
+var answersArray = ['colorado ', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
+var rightAnswerArray = [];
+arrayGame(answersArray);
+
+
+//Thanks the user for playing, informs them of their results.
 alert('Thanks for taking time to play my game! \n In the initial 5 questions about me you got '+ right +' right and '+ wrong + ' wrong.');
 
-//Sets a conditional responsed based on a boolean set by the number guessing game
+
+//Sets a variable that acts as a switch, based on a boolean set by the number guessing game then determines which response to give.
+var guessedRight = false;
 if(guessedRight === true)
 {
-  alert('In the number guessing game you guessed the number!\n It was 37, the same as my age.\nGood Job!');
+  alert('In the number guessing game you guessed the number!\n It was '+ randomNumber+ ', \nGood Job!');
 }
 else
 {
-  alert('In the number guessing game you did not guess right :( thats ok 4/50 are rough odds!\n the number was 37, the same as my age.');
+  alert('In the number guessing game you did not guess right :( thats ok 4/50 are rough odds!\n the numberwas '+ randomNumber+ '.');
 }
 
 alert('In the the places I have lived you guessed ' + rightAnswerArray.length + ' places right.\n' + rightAnswerArray + '.\n' + 'The places besides Washington are '+ answersArray );

@@ -45,7 +45,11 @@ if (heldAnswer === 'y'){
 }
 
 
-var questions[
-    ['Do you think I have kids?'; 'y'; 'Do you know them?', 'Are you sure about that answer?']
-    ['Do you think that I like ice climbing?'; 'y'; 'Do you want to come with me?','Would you bet your life on it?',]
-    []
+var questions
+[
+  ['Do you think I have kids?', 'y', 'Do you know them?', 'Are you sure about that answer?']
+  ['Do you think that I like ice climbing?', 'y', 'Do you want to come with me?','Would you bet your life on it?']
+  ['Do you think I ride a vespa?','Correct I ride motorscycles but mine is broken :(','put put put nope WRONG!']
+  ['Do you think Im from Boulder,Co?','Are you from there too?','Wrong-o!']
+  ['Do you think I speak another language?','Right!I speak some Korean but not fluently, so the answer is no','Sorry buddy, I know a little Korean but not enough to count!']
+]
