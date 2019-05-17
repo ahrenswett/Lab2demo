@@ -179,7 +179,7 @@ var randomNumber = 0;
 numberGuessGame();
 
 //assigns Array Game required variables. and calls the function
-var answersArray = ['colorado ', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
+var answersArray = ['colorado', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
 var rightAnswerArray = [];
 arrayGame(answersArray);
 
