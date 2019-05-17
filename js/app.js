@@ -1,183 +1,73 @@
 'use strict';
 
-// counts right and wrong answers
-var right = 0;
-var wrong = 0;
-var heldAnswer;
-//not used other than to track how many times function is called yet, but works as counter
-var loopCount = 0 ;
-
-
+/////////////////////////FUNCTIONS///////////////////////////////////
 // converts answer to lowercase and truncates to single letter answer
-//requires a globaly declared variable "heldAnswer"
-function shrink(answer){
+//requires a globaly declared variable "userAnswer"
+function shrink(answer)
+{
   answer=answer.toLowerCase();
-  if (answer === 'yes' || answer === 'y'){
-    heldAnswer = 'y';
+  if (answer === 'yes' || answer === 'y')
+  {
+    userAnswer = 'y';
   }
-  else if(answer === 'no'|| answer === 'n'){
-    heldAnswer = 'n';
+  else if(answer === 'no'|| answer === 'n')
+  {
+    userAnswer = 'n';
   }
   else{
-    heldAnswer = '';
+    userAnswer = '';
   }
   loopCount ++;
   console.log(loopCount + ' Loops');
 }
 
-//Lines 27 - 179 store functions that when called ask a question about me. None of them have perameters.
-function haveKidsQuestion()
+
+//welcomes the user to the page, gets their name and returns it in the console.
+//************************   Requires global variable userName *********************
+function welcome()
 {
-  //******KIDS********
-  // Asks User if they think I have Kids then logs the answer in console
-  var haveKids = prompt('Do you think I have kids?');
-  console.log('the user guessed ' + haveKids + ' kids.' );
-
-  // Uses shrink function to convert answer to lowercase and truncates to single letter answer
-  shrink(haveKids);
-
-  //increments a counter if the answer is right or wrong
-  if (heldAnswer === 'y')
-  {
-    right++;
-    alert('Do you know them?');
-    document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong>You answered ' + haveKids + '.<br></strong>That is correct! I have 3!';
-  }
-  else
-  {
-    wrong++;
-    if(heldAnswer === '')
-    {
-      haveKids= ' no answer ';
-    }
-
-    alert('Are you sure about that answer?');
-    document.getElementById('question1').innerHTML = 'Question 1: Do you think I have kids?<br><strong>You answered ' + haveKids + '.</strong><br>That is wrong! I have 3!';
-  }
+  userName = prompt('Hi, welcome to my page what is your name?');
+  console.log('the users name is ' + userName);
 }
 
-
-function iceClimbing()
+//Asks the user 5 Questions about me *****requires global var userAnswer*********
+function questions5()
 {
-  //**********ICE CLIMBING********
-  // Asks User if they think I like ice climbing then logs the answer in console
-  var iceClimb = prompt('Do you think that I like ice climbing?');
-  console.log('the user guessed ' + iceClimb + ' ice climbing.' );
+  var questions =
+  [
+    ['Do you think I have kids?', 'y', 'Thats right I have 3! Micah Aliyah and Autumn', 'Are you sure about that answer?'],
+    ['Do you think that I like ice climbing?', 'y', 'Do you want to come with me?','Would you bet your life on it?'],
+    ['Do you think I ride a vespa?','n','Correct I ride motorscycles but mine is broken','put put put nope!'],
+    ['Do you think Im from Boulder,Co?','y','Are you from there too?','Wrong-o!'],
+    ['Do you think I speak another language?','n','Right!I speak some Korean but not fluently, so the answer is no','Sorry buddy, I know a little Korean but not enough to count!']
+  ];
 
-  // Uses shrink function to convert answer to lowercase and truncates to single letter answer
-  shrink(iceClimb);
+  for(var j = 0; j < 5; j++ )
+  {
+    userAnswer = prompt(questions[j][0]);
+    shrink(userAnswer);
+    console.log('the user guessed ' + questions[j][0] + ' ' + userAnswer);
 
-  //increments a counter if the answer is right or wrong
-  if (heldAnswer === 'y')
-  {
-    right ++;
-    alert('Do you want to come with me?');
-    document.getElementById('question2').innerHTML= 'Question 2: Do you think that I like ice climbing?<br><strong>You answered ' + iceClimb + ' .<br></strong>That is correct! Its Magical, So whats not to like!!';
-  }
-  else
-  {
-    wrong ++;
-    if(heldAnswer === '')
+    if(userAnswer === '')
     {
-      iceClimb = ' no answer ';
+      prompt('You did not enter a response');
     }
-
-
-    alert('Would you bet your life on it?');
-    document.getElementById('question2').innerHTML = 'Question 2: Do you think that I like ice climbing?<br><strong>You answered ' + iceClimb + ' .<br></strong>That is Wrong! Its Magical, So whats not to like!!';
-  }
-}
-
-
-function vespaQuestion(){
-  //******VESPA******
-  // Asks User if they think I ride a vespa then logs the answer in console
-  var vespa = prompt('Do you think I ride a vespa?');
-  console.log('the user thinks ' + vespa + ' vespa rider');
-
-  // Uses shrink function to convert answer to lowercase and truncates to single letter answer
-  shrink(vespa);
-
-  //increments a counter if the answer is right or wrong
-  if (heldAnswer === 'n')
-  {
-    right ++;
-    alert('Correct I ride motorscycles but mine is broken :(');
-    document.getElementById('question3').innerHTML='Question 3: Do you think I ride a vespa?<br><strong>You answered ' + vespa + ' <br></strong>That is correct! I have a broken CB750 Cafe Racer.';
-  }
-  else
-  {
-    wrong ++;
-    if(heldAnswer === '')
+    else if (userAnswer === questions[j][1])
     {
-      vespa = ' no answer ';
+      right++;
+      alert(questions[j][2]);
+      questions[j].push(userAnswer);
+      console.log(questions[j])
     }
-    alert('put put put nope WRONG!');
-    document.getElementById('question3').innerHTML='Question 3: Do you think I ride a vespa?<br><strong>You answered ' + vespa + ' <br></strong>That is Wrong!  I have a broken CB750 Cafe Racer.';
-  }
-}
-
-
-function cityFromQuestion()
-{
-  //******CITY FROM******
-  // Asks User if they think im from Boulder then logs the answer in console
-  var cityFrom = prompt('Do you think Im from Boulder,Co?');
-  console.log('the user thinks ' + cityFrom + ' from Boulder,Co?');
-
-  // Uses shrink function to convert answer to lowercase and truncates to single letter answer
-  shrink(cityFrom);
-
-  //increments a counter if the answer is right or wrong
-  if (heldAnswer === 'y')
-  {
-    right ++;
-    alert('Are you from there too?');
-    document.getElementById('question4').innerHTML='Question 4: Do you think Im from Boulder,Co?<br><strong>You answered ' + cityFrom + ' <br></strong>That is correct! ';
-  }
-
-  else
-  {
-    wrong ++;
-    if(heldAnswer === '')
+    else
     {
-      cityFrom = ' no answer ';
+      wrong++;
+      alert(questions[j][3]);
     }
-    alert('Wrong-o!');
-
-    document.getElementById('question4').innerHTML='Question 4: Do you think Im from Boulder,Co?<br><strong>You answered ' + cityFrom + ' <br></strong>That is Wrong!  ';
   }
-}
-
-
-function anotherLanguage()
-{
-  //******anotherLang******
-  // Asks User if they think I i speak another language then logs the answer in console
-  var anotherLang = prompt('Do you think I speak another language?');
-  console.log('the user thinks ' + anotherLang + ' another language');
-
-  // Uses shrink function to convert answer to lowercase and truncates to single letter answer
-  shrink(anotherLang);
-
-  //increments a counter if the answer is right or wrong Question 5: Do you think I speak another language?
-  if (heldAnswer === 'n')
-  {
-    right ++;
-    alert('Right!I speak some Korean but not fluently, so the answer is no');
-    document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br><strong>You answered ' + anotherLang + ' <br></strong>That is correct! I only speak a little Korean. Not enough to count.';
-  }
-  else
-  {
-    wrong ++;
-    if(heldAnswer === '')
-    {
-      anotherLang = ' no answer ';
-    }
-    alert('Sorry buddy, I know a little Korean but not enough to count!');
-    document.getElementById('question5').innerHTML='Question 5: Do you think I speak another language?<br><strong>You answered ' + anotherLang + ' <br></strong>That is wrong! I only speak a little Korean. Not enough to count.';
-
-  }
+  console.log('You got ' + right + ', out of 5 right');
+  console.log('You got ' + wrong + ', out of 5 wrong');
+  console.log('users answers = '+ questions[0][4]+' '+questions[1][4]+' '+questions[2][4]+' '+questions[3][4]);
 }
 
 
@@ -218,6 +108,8 @@ function numberGuessGame()
 
 
 // ************************    Array Game Question 7    **********************************//
+//**************      Requires a global variable answersArray that is assigned an array of correct answers ******************
+//**************        Requires a global variable rightAnswersArray that holds the users correct guesses  ******************
 function arrayGame(answerKeyArray)
 {
   var userAnswer= prompt(userName + ', what states do you think I have lived in?');
@@ -263,18 +155,19 @@ function arrayGame(answerKeyArray)
 }
 
 
-//welcomes the user to the page, gets their name and returns it in the console.
-var userName = prompt('Hi, welcome to my page what is your name?');
-console.log('the users name is ' + userName);
-
-//Calls Each of the 5 question functions
-haveKidsQuestion();
-iceClimbing();
-vespaQuestion();
-cityFromQuestion();
-anotherLanguage();
+////////////////////////////BEGIN CODE///////////////////////////////
+// counts right and wrong answers
+var right = 0;
+var wrong = 0;
+var userAnswer;
+var userName;
+//not used other than to track how many times function shrink is called, but works as counter
+var loopCount = 0 ;
 
 
+//Calls welcom prompt gets name and starts the questrions5 function
+welcome();
+questions5();
 //Sends right wrong answer count to console then alerts the user their scores
 console.log('Got ' + right + ' answers right');
 console.log('Got ' + wrong + ' answers wrong');
@@ -285,8 +178,8 @@ alert(userName +', you got ' + right + ' right! :) and ' + wrong + ' wrong. :(')
 var randomNumber = 0;
 numberGuessGame();
 
-
-var answersArray = ['colorado ', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
+//assigns Array Game required variables. and calls the function
+var answersArray = ['colorado', 'texas', 'california', 'north carolina', 'oregon', 'new york'];
 var rightAnswerArray = [];
 arrayGame(answersArray);
 
